@@ -15,6 +15,8 @@ const questions = [
   "Contribution Guidelines:",
   "Test Instructions:",
   "Badges:",
+  "Enter your GitHub username:",
+  "Enter your email address:",
   "filename?"
 ];
 
@@ -67,12 +69,25 @@ function init() {
       {
         type: "input",
         message: questions[7],
+        name: "username",
+      },
+      {
+        type: "input",
+        message: questions[8],
+        name: "email",
+      },
+      {
+        type: "input",
+        message: questions[9],
         name: "filename",
       },
     ])
     .then((response) => {
-        const readme = (generateMarkdown(response));
-        console.log(readme);
+        const filename = `${response.filename}.md`;
+        const template = (generateMarkdown(response));
+        // console.log(filename);
+        // console.log(template);
+        writeToFile(filename, template);
     });
 }
 

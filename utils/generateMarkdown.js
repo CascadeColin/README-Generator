@@ -17,18 +17,19 @@ function generateMarkdown(data) {
   ## Table of Contents
   
   - [Description](#Description)
-  - [Installation Instructions](#Installation Instructions)
+  - [Installation](#Installation)
   - [Usage](#Usage)
-  - [Contribution Guidelines](#Contribution Guidelines)
-  - [Test Instructions](#Test Instructions)
+  - [Contributing](#Contributing)
+  - [Tests](#Tests)
   - [License](#license)
+  - [Questions](#Questions)
   - [Badges](#Badges)
   
   ## Description
   
   ${data.description}
   
-  ## Installation Instructions
+  ## Installation
   
   ${data.install}
   
@@ -36,23 +37,28 @@ function generateMarkdown(data) {
   
   ${data.usage}
   
-  ## Contribution Guidelines
+  ## Contributing
   
   ${data.contribution}
   
-  ## Test Instructions
+  ## Tests
   
   ${data.test}
   
   ## License
 
+  renderLicenseLink()
   renderLicenseSection()
+
+  ## Questions
+
+  You can find me on GitHub at:  https://github.com/${data.username}/
+
+  Have questions, comments, or want to learn more about me work?  Contact me directly at ${data.email}.
   
   ## Badges
   
-  ${data.badges}, renderLicenseBadge()
-  
-  Saved in: ${data.filename}`;
+  ${data.badges}, renderLicenseBadge()`;
 }
 
 
