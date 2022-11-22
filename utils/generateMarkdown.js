@@ -14,7 +14,46 @@ function renderLicenseSection(license) {}
 function generateMarkdown(data) {
   return `# ${data.title}
 
-`;
+  ## Table of Contents
+  
+  - [Description](#Description)
+  - [Installation Instructions](#Installation Instructions)
+  - [Usage](#Usage)
+  - [Contribution Guidelines](#Contribution Guidelines)
+  - [Test Instructions](#Test Instructions)
+  - [License](#license)
+  - [Badges](#Badges)
+  
+  ## Description
+  
+  ${data.description}
+  
+  ## Installation Instructions
+  
+  ${data.install}
+  
+  ## Usage
+  
+  ${data.usage}
+  
+  ## Contribution Guidelines
+  
+  ${data.contribution}
+  
+  ## Test Instructions
+  
+  ${data.test}
+  
+  ## License
+
+  renderLicenseSection()
+  
+  ## Badges
+  
+  ${data.badges}, renderLicenseBadge()
+  
+  Saved in: ${data.filename}`;
 }
+
 
 module.exports = generateMarkdown;
