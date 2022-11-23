@@ -1,96 +1,93 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
-// If there is no license, return an empty string
-function renderLicenseBadge(license) {}
-
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
-function renderLicenseLink(license) {}
-
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
-// FIXME: set up username parameter call
-function renderLicenseSection(license, username) {
-  const year = new Date().getFullYear();
-  const arr = [];
-  const licenses = {MIT: `Copyright ${year} ${username}
-  
-
-  Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-  
-  The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-  
-  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.`, MPL2: `The other license`};
-
-  const licenseArr = Object.getOwnPropertyNames(licenses);
-  if (license === licenseArr[0]) {
-    return licenses.MIT;
-  } if (license === licenseArr[1]) {
-    return `MPL2 License`
+function renderLicenseLink(license) {
+  if (license === 'MIT License'){
+    return `https://opensource.org/licenses/MIT`
   }
-
-  // return `License#1 is ${licenseArr[0]} and License#2 is ${licenseArr[1]}`
-  // IF I want to store the licenses in an array and call that...
-  // for (const property in licenses) {
-  //   arr.push((`${property}: ${licenses[property]}`));
-  // }
-  // return `License#1 is ${arr[0]} and License#2 is ${arr[1]}`;
+  if (license === 'ISC License'){
+    return `https://opensource.org/licenses/ISC`
+  }
+  if (license === 'GNU General Public License v3.0'){
+    return `https://opensource.org/licenses/GPL-3.0`
+  }
+  if (license === 'Mozilla Public License 2.0'){
+    return `https://opensource.org/licenses/MPL-2.0`
+  }
+  else {
+    return ``;
+  }
 }
 
-// TODO: Create a function to generate markdown for README
+function renderLicenseBadge(license) {
+  if (license === 'MIT License'){
+    return `![${license}](https://img.shields.io/badge/License-MIT-brightgreen)`
+  }
+  if (license === 'ISC License'){
+    return `![${license}](https://img.shields.io/badge/License-ISC-brightgreen)`
+  }
+  if (license === 'GNU General Public License v3.0'){
+    return `![${license}](https://img.shields.io/badge/License-GNUv3.0-brightgreen)`
+  }
+  if (license === 'Mozilla Public License 2.0'){
+    return `![${license}](https://img.shields.io/badge/License-MPL2.0-brightgreen)`
+  }
+  else {
+    return ``;
+  }
+}
+
+function renderLicenseSection(license, username) {
+  const year = new Date().getFullYear();
+  return `This project is licensed under [${license}](${renderLicenseLink(license)}) by ${username}, Copyright ${year}.`
+}
+
 function generateMarkdown(data) {
   return `# ${data.title}
 
-  ## Table of Contents
-  
-  - [Description](#Description)
-  - [Installation](#Installation)
-  - [Usage](#Usage)
-  - [Contributing](#Contributing)
-  - [Tests](#Tests)
-  - [License](#license)
-  - [Questions](#Questions)
-  - [Badges](#Badges)
-  
-  ## Description
-  
-  ${data.description}
-  
-  ## Installation
-  
-  ${data.install}
-  
-  ## Usage
-  
-  ${data.usage}
-  
-  ## Contributing
-  
-  ${data.contribution}
-  
-  ## Tests
-  
-  ${data.test}
-  
-  ## License
+${renderLicenseBadge(data.license)}
 
-  renderLicenseLink()
-
-  ${renderLicenseSection(data.license, data.username)}
-
-  ## Questions
-
-  You can find me on GitHub at:  https://github.com/${data.username}/
-
-  Have questions, comments, or want to learn more about me work?  Contact me directly at ${data.email}.
+## Table of Contents
   
-  ## Badges
+- [Description](#description)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [Tests](#tests)
+- [License](#license)
+- [Questions](#questions)
+- [Appendix](#appendix)
   
-  ${data.badges}, renderLicenseBadge()
-  
-  ## Appendix
+## Description
 
-  This README was created using CascadeColin's [README Generator](https://github.com/CascadeColin/README-Generator).  For more information, contact Colin at cascade.colin@gmail.com`;
+${data.description}
+  
+## Installation
+  
+${data.install}
+  
+## Usage
+  
+${data.usage}
+  
+## Contributing
+  
+${data.contribution}
+  
+## Tests
+  
+${data.test}
+  
+## License
+
+${renderLicenseSection(data.license, data.username)}
+
+## Questions
+
+You can find me on GitHub at:  https://github.com/${data.username}/
+
+Have questions, comments, or want to learn more about me work?  Contact me directly at ${data.email}.
+  
+## Appendix
+
+This README was created using [README Generator](https://github.com/CascadeColin/README-Generator) by Colin Marshall.  For more information, contact cascade.colin@gmail.com.`;
 }
-
 
 module.exports = generateMarkdown;
