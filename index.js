@@ -1,10 +1,15 @@
-// TODO: Include packages needed for this application
-const { notStrictEqual, notEqual } = require("assert");
+// TODO: Include packages needed for this application, probably won't use
+// const { notStrictEqual, notEqual } = require("assert");
 const fs = require("fs");
 const inq = require("inquirer");
-const { title } = require("process");
+// importing process as an object, probably won't use
+// const { title } = require("process");
 const generateMarkdown = require("./utils/generateMarkdown");
 const utils = require("./utils/generateMarkdown");
+// const getUsername = async () => {
+//   const user = await username;
+//   return user;
+// }
 
 // TODO: Create an array of questions for user input
 const questions = [
@@ -35,67 +40,78 @@ function init() {
         type: "input",
         message: questions[0],
         name: "title",
+        default: "My Title",
       },
       {
         type: "input",
         message: questions[1],
         name: "description",
+        default: "This is my description.",
       },
       {
         type: "input",
         message: questions[2],
         name: "install",
+        default: "Here is how to install the app.",
       },
       {
         type: "input",
         message: questions[3],
         name: "usage",
+        default: "How to use the app.",
       },
       {
         type: "input",
         message: questions[4],
         name: "contribution",
+        default: "Here's how you can help!",
       },
       {
         type: "input",
         message: questions[5],
         name: "test",
+        default: "Test it.",
       },
       {
         type: "input",
         message: questions[6],
         name: "badges",
+        default: "Here are my badges.",
       },
       {
         type: "input",
         message: questions[7],
         name: "username",
+        default: "CascadeColin",
       },
       {
         type: "input",
         message: questions[8],
         name: "email",
+        default: "cascade.colin@gmail.com",
       },
       {
         type: "input",
         message: questions[9],
         name: "filename",
+        default: "Sample_README",
+      },
+      {
+        type: "list",
+        message: questions[10],
+        name: "license",
+        choices: ["MIT","MPL2"],
+        default: "MIT",
       },
     ])
     .then((response) => {
         const filename = `${response.filename}.md`;
         const template = (generateMarkdown(response));
-        // console.log(filename);
-        // console.log(template);
         writeToFile(filename, template);
+        test = response.username;
     });
 }
 
 // Function call to initialize app
 init();
 
-// pseudo and notes
-
-// fs.writeFile("Sample_README.md", template, (err) =>
-//   err ? console.error(err) : console.log("Your README is ready!")
-// );
