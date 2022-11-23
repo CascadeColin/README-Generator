@@ -1,6 +1,6 @@
 # My Title
 
-![ISC License](https://img.shields.io/badge/License-ISC-brightgreen)
+![MIT License](https://img.shields.io/badge/License-MIT-brightgreen)
 
 ## Table of Contents
   
@@ -15,7 +15,8 @@
   
 ## Description
 
-This is my description.
+INSTRUCTIONS:
+Write your description here.  Delete these two sentences before saving, then close your editor.
   
 ## Installation
   
@@ -35,7 +36,7 @@ Test it.
   
 ## License
 
-This project is licensed under [ISC License](https://opensource.org/licenses/ISC) by CascadeColin, Copyright 2022.
+This project is licensed under [MIT License](https://opensource.org/licenses/MIT) by CascadeColin, Copyright 2022.
 
 ## Questions
 

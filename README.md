@@ -1,29 +1,52 @@
-## README for what the app does
+# README Generator
 
-## create Sample_README.md using the app
+![MIT License](https://img.shields.io/badge/License-MIT-brightgreen)
 
-/*
-GIVEN a command-line application that accepts user input
+## Table of Contents
+  
+- [Description](#description)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [Tests](#tests)
+- [License](#license)
+- [Questions](#questions)
+- [Appendix](#appendix)
+  
+## Description
 
-WHEN I am prompted for information about my application repository
-THEN a high-quality, professional README.md is generated with the title of my project and sections entitled Description, Table of Contents, Installation, Usage, License, Contributing, Tests, and Questions
+This application makes it easy to write README files!  It accepts user data and automatically formats it into a professional looking README with a license badge directly under the title.  After that, there is a table of contents with links to "Description", "Installation", "Usage", "Contributing", "Tests", "License", and "Questions".  There is also an automatically included "Appendix" giving me (Colin Marshall) credit for the application.  
 
-COMPLETE: WHEN I enter my project title
-COMPLETE: THEN this is displayed as the title of the README
+The "License" section, this application currently accepts:  MIT License, ISC License, GNU General Public License v3.0, and Mozilla Public License 2.0.  This also includes a link to the text of each license, along with a dynamically created GitHub username and copyright year.
 
-COMPLETE: WHEN I enter a description, installation instructions, usage information, COMPLETE: contribution guidelines, and test instructions
-COMPLETE: THEN this information is added to the sections of the README entitled COMPLETE: Description, Installation, Usage, Contributing, and Tests
+The "Questions" section includes a dynamically created link to your GitHub profile page.  It also formats a line under that in which users can contact the software developer directly by the specified email address.
+  
+## Installation
+  
+Clone the GitHub repository (https://github.com/CascadeColin/README-Generator) and run the application using Node.js.
+  
+## Usage
+  
+Run the application on the command line and answer the questions provided.
+  
+## Contributing
+  
+Reach out to Colin Marshall at cascade.colin@gmail.com if you would like to collaborate.
+  
+## Tests
+  
+We are covering this in week 11 of our bootcamp and are currently in week 10.  I will update this once I can.
+  
+## License
 
-WHEN I choose a license for my application from a list of options
-THEN a badge for that license is added near the top of the README and a notice is added to the section of the README entitled License that explains which license the application is covered under
+This project is licensed under [MIT License](https://opensource.org/licenses/MIT) by CascadeColin, Copyright 2022.
 
-COMPLETE: WHEN I enter my GitHub username
-COMPLETE: THEN this is added to the section of the README entitled Questions, with COMPLETE: a link to my GitHub profile
+## Questions
 
-COMPLETE: WHEN I enter my email address
-COMPLETE: THEN this is added to the section of the README entitled Questions, with COMPLETE: instructions on how to reach me with additional questions
+You can find me on GitHub at:  https://github.com/CascadeColin/
 
-COMPLETE: WHEN I click on the links in the Table of Contents
-COMPLETE: THEN I am taken to the corresponding section of the README
-*/
+Have questions, comments, or want to learn more about me work?  Contact me directly at cascade.colin@gmail.com.
+  
+## Appendix
 
+This README was created using [README Generator](https://github.com/CascadeColin/README-Generator) by Colin Marshall.  For more information, contact cascade.colin@gmail.com.

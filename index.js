@@ -29,10 +29,10 @@ function init() {
         default: "My Title",
       },
       {
-        type: "input",
+        type: "editor",
         message: questions[1],
         name: "description",
-        default: "This is my description.",
+        default: "INSTRUCTIONS:\nWrite your description here.  Delete these two sentences before saving, then close your editor.",
       },
       {
         type: "input",
